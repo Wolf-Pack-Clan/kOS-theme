@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -ueo pipefail
 
-# Set the timeout duration (in seconds)
-TIMEOUT_DURATION=2
-
 FORCE_INKSCAPE="$(echo "${FORCE_INKSCAPE-False}" | tr '[:upper:]' '[:lower:]')"
 if [[ "${FORCE_INKSCAPE}" == "true" ]]; then
   RENDER_SVG=""
@@ -46,20 +43,18 @@ fi
 echo "Rendering '$ASSETS_DIR/$i.png'"
 
 if [[ -n "${RENDER_SVG}" ]]; then
-  # Use timeout for RENDER_SVG
-  timeout "$TIMEOUT_DURATION" "$RENDER_SVG" --export-id "$i" \
+  # @TODO: remove --zoom when it will be fixed/implemented in resvg
+  "$RENDER_SVG" --export-id "$i" \
     --dpi ${DPI} \
     --zoom ${ZOOM} \
     "$SRC_FILE" "$ASSETS_DIR/$i.png"
 else
-  # Use timeout for Inkscape
-  timeout "$TIMEOUT_DURATION" "$INKSCAPE" --export-id="$i" \
+  "$INKSCAPE" --export-id="$i" \
     --export-id-only \
     --export-dpi=${DPI} \
     "$EXPORT_FILE_OPTION=$ASSETS_DIR/$i.png" "$SRC_FILE" >/dev/null
 fi
 
-# Optimize PNGs if optipng is available
 if [[ -n "${OPTIPNG}" ]]; then
-  timeout "$TIMEOUT_DURATION" "$OPTIPNG" -o7 --quiet "$ASSETS_DIR/$i.png"
+  "$OPTIPNG" -o7 --quiet "$ASSETS_DIR/$i.png"
 fi
