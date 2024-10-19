@@ -6,6 +6,6 @@ Default theme for [kazamOS](https://github.com/Wolf-Pack-Clan/kazamOS) based on 
 
 
 <p align="center" spacing="16px">
-  <img src="https://raw.githubusercontent.com/Wolf-Pack-Clan/kOS-theme/main/images/preview_light.png" alt="preview_light"/>
-  <img src="https://raw.githubusercontent.com/Wolf-Pack-Clan/kOS-theme/main/images/preview_dark.png" alt="preview_dark"/>
+  <img src="https://raw.githubusercontent.com/Wolf-Pack-Clan/kOS-theme/refs/heads/master/images/preview_light.png" alt="preview_light"/>
+  <img src="https://raw.githubusercontent.com/Wolf-Pack-Clan/kOS-theme/refs/heads/master/images/preview_dark.png" alt="preview_dark"/>
 </p>
