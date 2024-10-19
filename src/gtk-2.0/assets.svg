@@ -19,7 +19,7 @@
     </linearGradient>
 
     <linearGradient id="theme-primary">
-      <stop offset="1" stop-color="#1967d2"/>
+      <stop offset="1" stop-color="#bbdc3d"/>
     </linearGradient>
 
     <linearGradient id="theme-on-surface">
@@ -91,11 +91,11 @@
     </linearGradient>
 
     <linearGradient id="theme-overlay-hover-primary">
-      <stop offset="1" stop-color="#1967d2" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#bbdc3d" stop-opacity=".12"/>
     </linearGradient>
 
     <linearGradient id="theme-overlay-pressed-primary">
-      <stop offset="1" stop-color="#1967d2" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#bbdc3d" stop-opacity=".16"/>
     </linearGradient>
 
     <filter id="shadow-z2" color-interpolation-filters="sRGB" x="0" y="0" width="1" height="1">
