@@ -1,7 +1,7 @@
 option(
   'theme_name',
   type: 'string',
-  value: 'Materia',
+  value: 'kOS-theme',
   description: 'Base theme name',
 )
 
