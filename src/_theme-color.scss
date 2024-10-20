@@ -63,9 +63,12 @@ $surface-z1: #fff;
 $surface-z8: #fff;
 $surface-switch-thumb: #fff;
 $on-surface: on($surface-z0);
+$checkbox-base-color: #7c54a3;
+$checkbox-color: hint($checkbox-base-color);
+$checkbox-disabled-color: disabled-hint($checkbox-base-color);
 
-$primary-on-light: #1967d2;
-$primary-on-dark: #8ab4f8;
+$primary-on-light: #bbdc3d;
+$primary-on-dark: #cbe367;
 $primary: $primary-on-light;
 $on-primary: on($primary);
 
