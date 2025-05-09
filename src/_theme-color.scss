@@ -12,13 +12,13 @@
 
 // Determine whether the color has alpha.
 @function _has-alpha($color) {
-  @return if(color.alpha($color) < 1, true, false);
+  @return if(color.channel($color, 'alpha') < 1, true, false);
 }
 
 // Determine whether the color is dark.
 @function _is-dark($color) {
   // Calculate color brightness as per https://www.w3.org/TR/AERT/#color-contrast
-  $brightness: (color.red($color) * 299 + color.green($color) * 587 + color.blue($color) * 114) / 1000;
+  $brightness: (color.channel($color, 'red', $space: rgb) * 299 + color.channel($color, 'green', $space: rgb) * 587 + color.channel($color, 'blue', $space: rgb) * 114) * 0.001;
 
   @return if($brightness < 128, true, false);
 }
@@ -31,7 +31,7 @@ $on-dark: #fff;
 @function on($color) {
   $contrast-color: if(_is-dark($color), $on-dark, $on-light);
 
-  @if color.saturation($color) > 50% or color.alpha($color) < 1 {
+  @if color.channel($color, 'saturation', $space: hsl) > 50% or color.channel($color, 'alpha') < 1 {
     @return $contrast-color;
   } @else {
     @return rgba($contrast-color, .87);
@@ -40,9 +40,9 @@ $on-dark: #fff;
 
 // Determine the strength of highlight on top of given color.
 @function highlight($color) {
-  @if color.lightness($color) >= 80% {
+  @if color.channel($color, 'lightness', $space: hsl) >= 80% {
     @return rgba(white, .4);
-  } @else if color.lightness($color) >= 40% {
+  } @else if color.channel($color, 'lightness', $space: hsl) >= 40% {
     @return rgba(white, .2);
   } @else {
     @return rgba(white, .05);
@@ -51,7 +51,7 @@ $on-dark: #fff;
 
 // Make translucent color opaque by blending with the background color.
 @function opacify($color, $on) {
-  @return color.mix(color.change($color, $alpha: 1), $on, color.alpha($color) * 100%);
+  @return color.mix(color.change($color, $alpha: 1), $on, color.channel($color, 'alpha') * 100%);
 }
 
 //
@@ -166,7 +166,7 @@ $titlebar-indicator: currentcolor;
 @function _overlay($color, $opacity, $on) {
   $opacity-modifier: 0;
 
-  @if color.saturation($color) > 50% or color.saturation($on) > 50% {
+  @if color.channel($color, 'saturation', $space: hsl) > 50% or color.channel($on, 'saturation', $space: hsl) > 50% {
     $opacity-modifier: .04;
   }
 

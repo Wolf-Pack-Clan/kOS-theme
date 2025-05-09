@@ -3,7 +3,7 @@ gtk4_launch = find_program('gtk4-launch', required: false)
 if get_option('gtk4_version') != ''
   gtk4_full_version = get_option('gtk4_version')
 elif gtk4_launch.found()
-  gtk4_full_version = run_command(gtk4_launch, '--version').stdout()
+  gtk4_full_version = run_command(gtk4_launch, '--version', check:false).stdout()
 else
   message('gtk4-launch not found, using styles for last gtk4 version availible')
   gtk4_full_version = '4.0'

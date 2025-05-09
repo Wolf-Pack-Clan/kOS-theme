@@ -176,7 +176,7 @@ XfdesktopIconView.view {
     // FIXME: This has no .image-button style class :(
     > toolitem > button {
       min-width: 24px;
-      padding: (theme.$medium-size - 24px) / 2;
+      padding: (theme.$medium-size - 24px) * 0.5;
       border-radius: theme.$circular-radius;
     }
   }

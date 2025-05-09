@@ -327,7 +327,7 @@ na-tray-applet widget box widget {
 
     + button {
       margin: 0 4px 4px;
-      padding: (theme.$medium-size - 24px) / 2;
+      padding: (theme.$medium-size - 24px) * 0.5;
     }
   }
 }
@@ -366,7 +366,7 @@ na-tray-applet widget box widget {
   }
 
   .session-button {
-    padding: (theme.$large-size - 24px) / 2;
+    padding: (theme.$large-size - 24px) * 0.5;
   }
 
   .frame {
