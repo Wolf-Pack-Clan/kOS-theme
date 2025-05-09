@@ -59,7 +59,6 @@ foreach theme: themes
   install_data(
     [
       'COPYING',
-      'INSTALL_GDM_THEME.md',
     ],
     install_dir: theme['dir'],
   )

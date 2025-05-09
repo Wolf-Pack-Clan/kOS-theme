@@ -20,12 +20,6 @@ option(
 )
 
 option(
-  'gnome_shell_version',
-  type: 'string',
-  description: 'Build GNOME Shell theme for specific version',
-)
-
-option(
   'gtk4_version',
   type: 'string',
   description: 'Build GTK 4 theme for specific version',
