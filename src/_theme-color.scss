@@ -63,14 +63,16 @@ $surface-z1: #fff;
 $surface-z8: #fff;
 $surface-switch-thumb: #fff;
 $on-surface: on($surface-z0);
-$checkbox-base-color: #7c54a3;
-$checkbox-color: hint($checkbox-base-color);
-$checkbox-disabled-color: disabled-hint($checkbox-base-color);
 
 $primary-on-light: #bbdc3d;
 $primary-on-dark: #cbe367;
 $primary: $primary-on-light;
 $on-primary: on($primary);
+
+$secondary-on-light: #7855a0;
+$secondary-on-dark: #a77bcd;
+$secondary: $secondary-on-light;
+$on-secondary: on($secondary);
 
 $error-on-light: #d93025;
 $error-on-dark: #f28b82;
@@ -126,6 +128,9 @@ $titlebar-indicator: currentcolor;
 
   $primary: $primary-on-dark;
   $on-primary: on($primary);
+
+  $secondary: $secondary-on-dark;
+  $on-secondary: on($secondary);
 
   $error: $error-on-dark;
   $on-error: on($error);
