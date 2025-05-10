@@ -4,6 +4,9 @@
 
 Default theme for [kazamOS](https://github.com/Wolf-Pack-Clan/kazamOS) based on [Materia](https://github.com/nana-4/materia-theme/)
 
+## Note
+The screenshots do not reflect the current state.
+
 ## XFWM4 (xfce4 window manager)
 
 ### Dark Preview
