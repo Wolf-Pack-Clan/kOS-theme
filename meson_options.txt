@@ -31,3 +31,10 @@ option(
   value: false,
   description: 'Whether to build theme for flatpak package',
 )
+
+option(
+  'debian_package',
+  type: 'boolean',
+  value: false,
+  description: 'Whether to build a Debian package',
+)

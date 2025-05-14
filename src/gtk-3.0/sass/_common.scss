@@ -3215,7 +3215,7 @@ frame.flat > border {
 
 actionbar > revealer > box {
   padding: theme.$container-padding;
-  border-top: 1px solid theme-color.divider(theme-color.$on-secondary);// on-surface
+  border-top: 1px solid theme-color.divider(theme-color.$secondary);// on-surface
   // background-color: $surface-z1;
 
   button:not(.suggested-action):not(.destructive-action) {
@@ -3372,7 +3372,7 @@ expander {
 
     &:hover,
     &:active {
-      color: theme-color.$secondary;//theme-color.$checkbox-base-color;
+      color: theme-color.hint(theme-color.$secondary);//theme-color.$checkbox-base-color;
     }
 
     &:disabled {
@@ -3403,7 +3403,7 @@ calendar {
 
   &.header {
     border-style: none none solid;
-    border-color: theme-color.divider(theme-color.$on-secondary);// on-surface
+    border-color: theme-color.divider(theme-color.$secondary);// on-surface
     border-radius: 0;
   }
 
@@ -4239,7 +4239,7 @@ popover.emoji-picker {
   padding: 0;
 
   entry {
-    border-bottom: 1px solid theme-color.divider(theme-color.$on-secondary);// on-surface
+    border-bottom: 1px solid theme-color.divider(theme-color.$secondary);// on-surface
     border-image: none;
     border-radius: 0;
     box-shadow: none;
@@ -4247,7 +4247,7 @@ popover.emoji-picker {
   }
 
   scrolledwindow {
-    border-bottom: 1px solid theme-color.divider(theme-color.$on-secondary);// on-surface
+    border-bottom: 1px solid theme-color.divider(theme-color.$secondary);// on-surface
   }
 }
 

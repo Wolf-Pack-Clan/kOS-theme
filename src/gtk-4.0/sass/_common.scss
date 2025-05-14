@@ -1365,7 +1365,7 @@ button.combo:only-child {
   padding: theme.$container-padding;
   border-style: solid;
   border-width: 0 1px 1px;
-  border-color: theme-color.divider(theme-color.$on-surface);
+  border-color: theme-color.divider(theme-color.$secondary); // on-surface
   background-color: theme-color.$surface-z1;
 }
 
@@ -1775,8 +1775,8 @@ pathbar.linked:not(.vertical) > button {
 
 columnview.view,
 treeview.view {
-  border-left-color: theme-color.stroke(theme-color.$on-surface); // this is actually the tree lines color,
-  border-top-color: theme-color.divider(theme-color.$on-surface); // while this is the grid lines color, better then nothing
+  border-left-color: theme-color.stroke(theme-color.$on-secondary); // on-surface // this is actually the tree lines color,
+  border-top-color: theme-color.divider(theme-color.$on-secondary); // while this is the grid lines color, better then nothing
 
   // to avoid borders being overridden by the previously set props
   > rubberband {
@@ -1807,7 +1807,7 @@ treeview.view {
     // FIXME: box-shadow, background-color and background-image are not available here.
     border-style: solid none;
     border-width: 9999px;
-    border-color: theme-color.hover-overlay(theme-color.$on-surface);
+    border-color: theme-color.hover-overlay(theme-color.$on-secondary); //on-surface
 
     &.after {
       border-top-style: none;
@@ -1868,7 +1868,7 @@ treeview.view {
       padding: 2px 6px;
       border-style: none solid solid none;
       border-width: 1px;
-      border-color: theme-color.divider(theme-color.$on-surface);
+      border-color: theme-color.divider(theme-color.$on-secondary); // on-surface
       border-radius: 0;
       background-clip: padding-box;
       background-color: transparent;
@@ -1909,7 +1909,7 @@ treeview.view {
     padding: 2px 6px;
     border-style: none solid solid;
     border-width: 1px;
-    border-color: theme-color.divider(theme-color.$on-surface);
+    border-color: theme-color.divider(theme-color.$on-secondary); // on-surface
     border-radius: 0;
     box-shadow: none;
     // background-color: $surface-z1;
@@ -2590,7 +2590,7 @@ radio {
   margin: -($check-radio-size - 24px) * 0.5;
   padding: ($check-radio-size - 24px) * 0.5;
   border-radius: theme.$circular-radius;
-  color: theme-color.hint(theme-color.$on-surface);
+  color: rgba(theme-color.$secondary, .6);//theme-color.hint(theme-color.$on-surface);
   @extend %ripple;
   @include drawing.ink-color(theme-color.$on-surface);
 
@@ -2601,7 +2601,7 @@ radio {
   }
 
   &:disabled {
-    color: theme-color.disabled-hint(theme-color.$on-surface);
+    color: theme-color.disabled-hint(theme-color.$secondary);
   }
 }
 
@@ -2641,7 +2641,8 @@ radio {
     border-image-source: radial-gradient(circle, theme-color.$primary 4.5px, transparent 5px);
 
     &:disabled {
-      border-image-source: radial-gradient(circle, theme-color.disabled-hint(theme-color.$on-surface) 4.5px, transparent 5px);
+      //border-image-source: radial-gradient(circle, theme-color.disabled-hint(theme-color.$on-surface) 4.5px, transparent 5px);
+      border-image-source: radial-gradient(circle, theme-color.disabled-hint(theme-color.$secondary) 4.5px, transparent 5px);
     }
   }
 }
@@ -2689,7 +2690,7 @@ radio:not(:checked):active {
 treeview.view check,
 treeview.view radio {
   padding: 0;
-  color: theme-color.hint(theme-color.$on-surface);
+  color: theme-color.hint(theme-color.$on-secondary);
 
   &:checked,
   &:indeterminate {
@@ -2697,7 +2698,7 @@ treeview.view radio {
   }
 
   &:disabled {
-    color: theme-color.disabled-hint(theme-color.$on-surface);
+    color: theme-color.disabled-hint(theme-color.$secondary);
   }
 
   &,
@@ -3117,7 +3118,7 @@ statusbar {
 actionbar > revealer > box {
   padding: theme.$container-padding;
   border-spacing: theme.$container-padding;
-  border-top: 1px solid theme-color.divider(theme-color.$on-surface);
+  border-top: 1px solid theme-color.divider(theme-color.$secondary);
   // background-clip: border-box;
 
   button:not(.suggested-action):not(.destructive-action) {
@@ -3157,7 +3158,7 @@ scrolledwindow {
   @at-root junction {
     border-style: solid none none solid;
     border-width: 1px;
-    border-color: theme-color.divider(theme-color.$on-surface);
+    border-color: theme-color.divider(theme-color.$on-secondary);
     // background-color: $surface-z1;
 
     &:dir(rtl) {
@@ -3170,7 +3171,7 @@ scrolledwindow {
 separator {
   min-width: 1px;
   min-height: 1px;
-  background-color: theme-color.divider(theme-color.$on-surface);
+  background-color: theme-color.divider(theme-color.$secondary);
 }
 
 %hide_separators {
@@ -3190,6 +3191,7 @@ list {
 
   > row {
     padding: 2px;
+    
 
     &.expander {
       padding: 0;
@@ -3201,7 +3203,7 @@ list {
   }
 
   &.separators:not(.horizontal) > row:not(:first-child) {
-    border-top: 1px solid theme-color.divider(theme-color.$on-surface);
+    border-top: 1px solid theme-color.divider(theme-color.$secondary);
   }
 
   &.separators.horizontal > row:not(:first-child) {
@@ -3211,6 +3213,7 @@ list {
 
 row {
   background-clip: padding-box;
+  border-bottom-color: theme-color.divider(theme-color.$secondary);// custom
 
   &.activatable {
     @extend %ripple;
@@ -3318,14 +3321,14 @@ expander {
   min-height: 16px;
   padding: 4px;
   border-radius: theme.$circular-radius;
-  color: theme-color.hint(theme-color.$on-surface);
+  color: theme-color.hint(theme-color.$secondary);
   -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 
   @extend %ripple;
   @include drawing.ink-color(theme-color.$on-surface);
 
   &:disabled {
-    color: theme-color.disabled-hint(theme-color.$on-surface);
+    color: theme-color.disabled-hint(theme-color.$secondary);
   }
 
   &:checked {
@@ -3381,7 +3384,7 @@ calendar {
   > header {
     padding: 4px;
     border-spacing: 4px;
-    border-bottom: 1px solid theme-color.divider(theme-color.$on-surface);
+    border-bottom: 1px solid theme-color.divider(theme-color.$secondary);
 
     > button.image-button {
       padding: 0;
@@ -3514,11 +3517,11 @@ window.dialog.message { // Message Dialog styling
 
 filechooser {
   .dialog-action-box {
-    border-top: 1px solid theme-color.divider(theme-color.$on-surface);
+    border-top: 1px solid theme-color.divider(theme-color.$on-secondary);
   }
 
   #pathbarbox {
-    border-bottom: 1px solid theme-color.divider(theme-color.$on-surface);
+    border-bottom: 1px solid theme-color.divider(theme-color.$on-secondary);
     // background-color: $surface-z0;
 
     > stack > box > button { // The new folder button
@@ -3549,14 +3552,14 @@ filechooserbutton:drop(active) {
     &:dir(ltr),
     &.left,
     &.left:dir(rtl) {
-      border-right: 1px solid theme-color.divider(theme-color.$on-surface);
+      border-right: 1px solid theme-color.divider(theme-color.$on-secondary);
       border-left-style: none;
     }
 
     @at-root %sidebar_right,
     &:dir(rtl),
     &.right {
-      border-left: 1px solid theme-color.divider(theme-color.$on-surface);
+      border-left: 1px solid theme-color.divider(theme-color.$on-secondary);
       border-right-style: none;
     }
   }
@@ -3742,7 +3745,7 @@ paned {
     &.wide {
       min-width: 4px;
       min-height: 4px;
-      border: 1px solid theme-color.divider(theme-color.$on-surface);
+      border: 1px solid theme-color.divider(theme-color.$secondary);
       background-color: transparent;
     }
   }
@@ -3821,7 +3824,7 @@ infobar {
 
   &.info > revealer > box,
   &.question > revealer > box {
-    border-bottom: 1px solid theme-color.divider(theme-color.$on-surface);
+    border-bottom: 1px solid theme-color.divider(theme-color.$on-secondary);
     // background-color: $surface-z1;
 
     button {
@@ -4038,7 +4041,7 @@ window {
 
   // server-side decorations as used by mutter
   &.ssd {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16); // just doing borders, wm draws actual shadows
+    box-shadow: 0 3px 3px rgba(theme-color.$secondary, 0.16); // just doing borders, wm draws actual shadows
   }
 
   &.solid-csd {
@@ -4194,7 +4197,7 @@ popover.emoji-picker > contents {
 }
 
 .emoji-searchbar {
-  border-bottom: 1px solid theme-color.divider(theme-color.$on-surface);
+  border-bottom: 1px solid theme-color.divider(theme-color.$secondary);
 
   > entry.search {
     border-image: none;
@@ -4207,7 +4210,7 @@ popover.emoji-picker > contents {
 .emoji-toolbar {
   padding: 4px;
   border-spacing: 4px;
-  border-top: 1px solid theme-color.divider(theme-color.$on-surface);
+  border-top: 1px solid theme-color.divider(theme-color.$secondary);
 
   > button.emoji-section {
     &:checked {
