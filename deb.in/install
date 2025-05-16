@@ -1,6 +1,6 @@
-kOS-theme /usr/share/themes/kOS-theme
-kOS-theme-compact /usr/share/themes/kOS-theme-compact
-kOS-theme-dark /usr/share/themes/kOS-theme-dark
-kOS-theme-dark-compact /usr/share/themes/kOS-theme-dark-compact
-kOS-theme-light /usr/share/themes/kOS-theme-light
-kOS-theme-light-compact /usr/share/themes/kOS-theme-light-compact
+kOS-theme /usr/share/themes
+kOS-theme-compact /usr/share/themes
+kOS-theme-dark /usr/share/themes
+kOS-theme-dark-compact /usr/share/themes
+kOS-theme-light /usr/share/themes
+kOS-theme-light-compact /usr/share/themes
