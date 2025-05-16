@@ -1,6 +1,6 @@
 project(
   'materia-theme',
-  version: '20210322',
+  version: '1.0',
   license: 'GPLv2+',
   meson_version: '>= 1.0.1',
   default_options: ['prefix=/usr'],
@@ -69,24 +69,4 @@ if not get_option('flatpak')
 else
   subdir('src/gtk-3.0')
   subdir('src/gtk-4.0')
-endif
-
-if get_option('debian_package')
-  debian_dir = meson.current_build_dir() / 'debian'
-  control_file = configure_file(
-    input: 'debian/control.in',
-    output: 'control',
-    configuration: configuration_data(),
-    install_dir: debian_dir,
-  )
-
-  # Create a placeholder for the Debian package build script
-  debian_build_script = configure_file(
-    input: 'debian/rules.in',
-    output: 'rules',
-    configuration: configuration_data(),
-    install_dir: debian_dir,
-  )
-
-  message('Debian package build files generated in ' + debian_dir)
 endif

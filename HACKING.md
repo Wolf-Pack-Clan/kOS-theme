@@ -81,9 +81,6 @@ colors are defined.
 
 - `src/gtk-3.0/assets.svg`
 - `src/gtk-2.0/assets{,-dark}.svg`
-- `src/cinnamon/assets/*.svg`
-- `src/gnome-shell/assets{,-dark}/*.svg`
-- `src/unity/*/*.svg`
 - `src/xfwm4/xfwm4{,-dark,-light}/*.svg`
 - `src/chrome/chrome-scrollbar{,-dark}/icons/*.svg`
 
@@ -93,7 +90,6 @@ colors are defined.
 #### Misc
 
 - `src/gtk-2.0/gtkrc{,-dark,-light}`
-- `src/metacity-1/metacity-theme-2{,-light}.xml`
 - `src/xfwm4/xfwm4{,-dark,-light}/themerc`
 - `src/chrome/chrome-theme{,-dark,-light}/manifest.json`
 
@@ -109,9 +105,7 @@ After all the steps, run `meson install` to rebuild the themes.
 - [GTK 4](https://gitlab.gnome.org/GNOME/gtk/tree/master/gtk/theme/Adwaita)
 - [GTK 3](https://gitlab.gnome.org/GNOME/gtk/tree/gtk-3-24/gtk/theme/Adwaita)
 - [GTK 2](https://gitlab.gnome.org/GNOME/gnome-themes-extra/tree/master/themes/Adwaita/gtk-2.0)
-- [GNOME Shell](https://gitlab.gnome.org/GNOME/gnome-shell/tree/master/data/theme)
   - [Sass sources](https://gitlab.gnome.org/GNOME/gnome-shell-sass) (legacy)
-- [Metacity](https://gitlab.gnome.org/GNOME/gnome-themes-extra/tree/gnome-3-14/themes/Adwaita/metacity-1) (legacy)
 
 > For other upstream theme sources of apps/DEs, see the comments in the source code.
 

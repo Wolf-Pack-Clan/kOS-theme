@@ -46,13 +46,13 @@ Option | Default Value | Description
 `prefix` | `/usr` | Installation prefix
 `colors` | `default,light,dark` | List of color variants to build
 `sizes` | `default,compact` | List of size variants to build
-`gnome_shell_version` | n/a (auto) | Build GNOME Shell theme for specific version
 `gtk4_version` | n/a (auto) | Build GTK 4 theme for specific version
 
 Build options can be set at the configuration time, for example:
 
 ```sh
-meson _build -Dprefix="$HOME/.local" -Dcolors=default,dark -Dsizes=compact
+meson setup _build -Dprefix="$HOME/.local" -Dcolors=default,dark -Dsizes=compact
+ninja -C _build
 ```
 
 > Note: If you are a package maintainer, you should always set `gnome_shell_version` and `gtk4_version` in your package script based on the `gnome-shell` and `gtk4` package versions in your distribution. Otherwise, the corresponding themes may be built for wrong versions.
