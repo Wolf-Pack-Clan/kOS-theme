@@ -3,3 +3,4 @@ tmp/
 *build*/
 node_modules/
 test
+kos-theme*

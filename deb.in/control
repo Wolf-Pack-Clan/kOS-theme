@@ -1,0 +1,11 @@
+Source: kos-theme
+Section: x11
+Priority: optional
+Maintainer: Kazam (discord: kazam0180)
+Homepage: https://github.com/Wolf-Pack-Clan/kOS-theme
+
+Package: kos-theme
+Architecture: all
+Recommends: gtk2-engines-murrine, libgtk-3-common, libgtk2.0-common, libgtk-4-common
+Description: Default theme for kazamOS. Based on Materia.
+ It focuses on XFCE desktop environment and LightDM.
