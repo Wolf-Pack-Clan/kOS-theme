@@ -5,6 +5,7 @@
 @use "../../../shadow";
 @use "../common";
 @use "../drawing";
+@use "../../../color-palette";
 
 /**
  * Tweaks
@@ -849,6 +850,18 @@ list.categories {
 evview.content-view.view:selected {
   background-color: theme-color.$primary;
   color: theme-color.$on-primary;
+}
+
+// Note text
+evannotationwindow {
+  scrolledwindow {
+    textview {
+      text {
+        caret-color: theme-color.$primary;
+        background-color: color-palette.$yellow-a200;
+      }
+    }
+  }
 }
 
 /**
