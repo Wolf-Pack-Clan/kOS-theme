@@ -1,7 +1,7 @@
 foreach theme: themes
   gtk2_dir = join_paths(theme['dir'], 'gtk-2.0')
 
-  if theme['color'] != '-dark'
+  if theme['variant'] != '-dark'
     gtk2_assets_dir = 'assets'
   else
     gtk2_assets_dir = 'assets-dark'
@@ -14,7 +14,7 @@ foreach theme: themes
   )
 
   install_data(
-    'gtkrc' + theme['color'],
+    'gtkrc' + theme['variant'],
     rename: 'gtkrc',
     install_dir: gtk2_dir,
   )

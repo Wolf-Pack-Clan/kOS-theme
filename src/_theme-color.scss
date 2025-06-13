@@ -119,6 +119,13 @@ $on-titlebar: on($titlebar);
 
 $titlebar-indicator: currentcolor;
 
+@if theme.$purple-theme {
+  $__tmp_pri: $primary;
+  $primary: $secondary;
+  $secondary: $__tmp_pri;
+  @debug "purple";
+}
+
 @if theme.$dark-theme {
   $surface-z0: #121212;
   $surface-z1: color.mix(white, $surface-z0, 5%);

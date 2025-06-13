@@ -51,7 +51,7 @@ Option | Default Value | Description
 Build options can be set at the configuration time, for example:
 
 ```sh
-meson setup _build -Dprefix="$HOME/.local" -Dcolors=default,dark -Dsizes=compact
+meson setup _build -Dprefix="$HOME/.local" -Dcolors=green,purple -Dvariants=default,dark -Dsizes=default,compact
 ninja -C _build
 ```
 

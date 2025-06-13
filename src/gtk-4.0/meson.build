@@ -58,6 +58,7 @@ foreach theme: themes
   gtk4_scss_conf.set('dark_theme', theme['scss_dark_theme'])
   gtk4_scss_conf.set('light_topbar', theme['scss_light_topbar'])
   gtk4_scss_conf.set('compact', theme['scss_compact'])
+  gtk4_scss_conf.set('purple_theme', theme['scss_purple_theme'])
   gtk4_scss_conf.set('version', gtk4_version)
   gtk4_scss_conf.set('current_source_dir', meson.current_source_dir())
 

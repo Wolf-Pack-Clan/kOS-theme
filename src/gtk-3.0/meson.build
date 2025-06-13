@@ -21,14 +21,17 @@ gtk3_scss_depend_files = files([
 foreach theme: themes
   gtk3_dir = join_paths(theme['dir'], 'gtk-3.0')
 
-  gtk3_variants = [
-    'gtk',
-  ]
-
-  # Only non-dark themes need a dark variant.
-  if theme['color'] != '-dark'
+  # We always generate the “base” GTK style…
+  gtk3_variants = ['gtk']
+  # …and if this is *not* the dark variant, also generate the dark top‑bar style
+  if theme['variant'] != '-dark'
     gtk3_variants += 'gtk-dark'
   endif
+
+  # Pick *exactly* the one color your theme asked for:
+  gtk3_colors = [
+    theme['color'] == '-purple' ? 'purple' : 'green'
+  ]
 
   install_subdir(
     'assets',
@@ -48,9 +51,12 @@ foreach theme: themes
   gtk3_scss_conf.set('dark_theme', theme['scss_dark_theme'])
   gtk3_scss_conf.set('light_topbar', theme['scss_light_topbar'])
   gtk3_scss_conf.set('compact', theme['scss_compact'])
+  gtk3_scss_conf.set('purple_theme', theme['scss_purple_theme'])
   gtk3_scss_conf.set('current_source_dir', meson.current_source_dir())
 
   foreach gtk3_variant: gtk3_variants
+    #foreach gtk3_color: gtk3_colors
+      #gtk3_temp_name = '@0@.gtk3.@1@-@2@'.format(theme['name'], gtk3_variant, gtk3_color)
     gtk3_temp_name = '@0@.gtk3.@1@'.format(theme['name'], gtk3_variant)
 
     # Configure SCSS file
@@ -73,9 +79,10 @@ foreach theme: themes
     # Install it while renaming to a valid name
     meson.add_install_script(
       sh, '-c', 'cp "@0@" "@1@"'.format(
-        gtk3_css.full_path(),
-        join_paths('$MESON_INSTALL_DESTDIR_PREFIX', gtk3_dir, '@0@.css'.format(gtk3_variant)),
-      ),
+          gtk3_css.full_path(),
+          join_paths('$MESON_INSTALL_DESTDIR_PREFIX', gtk3_dir, '@0@.css'.format(gtk3_variant)),
+        ),
     )
+    #endforeach
   endforeach
 endforeach

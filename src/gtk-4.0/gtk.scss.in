@@ -2,6 +2,7 @@
   $dark-theme: @dark_theme@,
   $light-topbar: @light_topbar@,
   $compact: @compact@,
+  $purple-theme: @purple_theme@,
   $toolkit: "gtk4"
 );
 @use "@current_source_dir@/sass/gtk" with ($version: @version@);

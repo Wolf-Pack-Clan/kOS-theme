@@ -1,5 +1,5 @@
 project(
-  'materia-theme',
+  'kOS-theme',
   version: '1.0',
   license: 'GPLv2+',
   meson_version: '>= 1.0.1',
@@ -34,24 +34,33 @@ if not sass.found() or sass_is_ruby_sass or not sass_has_module_system
 endif
 
 themes = []
-foreach color: get_option('colors')
+foreach variant: get_option('variants')
   foreach size: get_option('sizes')
-    color_suffix = color == 'default' ? '' : '-@0@'.format(color)
+    variant_suffix = variant == 'default' ? '' : '-@0@'.format(variant)
     size_suffix = size == 'default' ? '' : '-@0@'.format(size)
 
-    scss_dark_theme = color == 'dark' ? 'true' : 'false'
-    scss_light_topbar = color == 'light' ? 'true' : 'false'
+    scss_dark_theme = variant == 'dark' ? 'true' : 'false'
+    scss_light_topbar = variant == 'light' ? 'true' : 'false'
     scss_compact = size == 'compact' ? 'true' : 'false'
 
-    themes += {
-      'name': theme_base_name + color_suffix + size_suffix,
-      'dir': theme_base_dir + color_suffix + size_suffix,
-      'color': color_suffix,
-      'size': size_suffix,
-      'scss_dark_theme': scss_dark_theme,
-      'scss_light_topbar': scss_light_topbar,
-      'scss_compact': scss_compact,
-    }
+    foreach color: get_option('colors')
+      color_suffix      = color == 'green' ? '' : '-@0@'.format(color)
+      scss_purple_theme = color == 'purple' ? 'true' : 'false'
+      message('####################################')
+      message(color_suffix)
+
+      themes += {
+        'name': theme_base_name + variant_suffix + color_suffix + size_suffix,
+        'dir': theme_base_dir + variant_suffix + color_suffix + size_suffix,
+        'variant': variant_suffix,
+        'size': size_suffix,
+        'color': color_suffix,
+        'scss_dark_theme': scss_dark_theme,
+        'scss_light_topbar': scss_light_topbar,
+        'scss_compact': scss_compact,
+        'scss_purple_theme': scss_purple_theme
+      }
+    endforeach
   endforeach
 endforeach
 

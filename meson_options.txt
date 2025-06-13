@@ -1,15 +1,22 @@
 option(
   'theme_name',
   type: 'string',
-  value: 'kOS-theme',
+  value: 'kOS',
   description: 'Base theme name',
 )
 
 option(
   'colors',
   type: 'array',
-  choices: ['default', 'light', 'dark'],
+  choices: ['green', 'purple'],
   description: 'List of color variants to build',
+)
+
+option(
+  'variants',
+  type: 'array',
+  choices: ['default', 'light', 'dark'],
+  description: 'List of variants to build',
 )
 
 option(
