@@ -7,7 +7,6 @@
 - [Pantheon theme](../../issues/69)
 - [Openbox theme](../../issues/254)
 - [GtkSourceView theme](../../issues/150)
-- [Color scheme for GNOME Terminal](../../issues/157)
 - [Cursor theme](../../issues/156) (`low priority`)
 - Overlay scrollbar extension for Chrome/Chromium (`low priority`)
 
