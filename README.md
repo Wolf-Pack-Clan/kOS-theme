@@ -1,3 +1,7 @@
+# INFO
+Migrated to GitLab:
+https://gitlab.com/kazam0180/kOS-theme
+
 
 
 # kOS-theme 
